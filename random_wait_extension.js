@@ -25,11 +25,14 @@
 	ext.get_temp = function(location, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+              url: 'https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=T2M&startDate=20160301&endDate=20160301&userCommunity=SSE&tempAverage=DAILY&outputList=JSON,ASCII&lat=36&lon=45&user=anonymous',
               dataType: 'jsonp',
-              success: function( weather_data ) {
+              success: function( data ) {
                   // Got the data - parse it and return the temperature
-                  temperature = weather_data['main']['temp'];
+		   features = data["features"];
+            	   properties = features[0].properties;
+            	   parameter = properties.parameter;
+                  temperature = parameter[0];
                   callback(temperature);
               }
         });
