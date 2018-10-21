@@ -29,11 +29,11 @@
               dataType: 'json',
               success: function( data ) {
                   // Got the data - parse it and return the temperature
-		   features = data["features"];
+		   /*features = data["features"];
             	   properties = features["properties"];
             	   parameter = properties["T2M"];
-                  temperature = parameter["20160301"];
-                  callback(temperature);
+                  temperature = parameter["20160301"];*/
+                  callback(5);
               }
         });
     };
