@@ -32,7 +32,7 @@
 		   features = data["features"];
             	   properties = features["properties"];
             	   parameter = properties["T2M"];
-                  //temperature = parameter["20160301"];
+                  temperature = parameter["20160301"];
                   callback(5);
               }
         });
