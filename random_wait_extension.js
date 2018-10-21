@@ -32,7 +32,7 @@
      // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'current temperature lat: %f long: %f', 'get_temp', 36,45],
+            ['R', 'current temperature lat: %d long: %d', 'get_temp', 36,45],
 		
         ]
     };
