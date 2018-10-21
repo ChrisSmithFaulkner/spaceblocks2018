@@ -40,18 +40,7 @@
 	 ext.temp = function(location, callback) {
         // Make an AJAX call to the Open Weather Maps API
         //request data
-$.getJSON( 'https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=T2M&startDate=20160301&endDate=20160301&userCommunity=SSE&tempAverage=DAILY&outputList=JSON,ASCII&lat=36&lon=45&user=anonymous',
-	  function( data ) { 
-
-      }).done( function ( data ) {
-
-            //access the data values within the json data response 
-            features = data["features"];
-            properties = features[0].properties;
-            parameter = properties.parameter;
-
-            callback(5);
-});
+	callback(5);
     };
      // Block and block menu descriptions
     var descriptor = {
