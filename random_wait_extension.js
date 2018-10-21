@@ -30,6 +30,7 @@
               success: function( data ) {
                   // Got the data - parse it and return the temperature
 		   features = data["features"];
+		      console.log(features);
             	   properties = features[0].properties;;
             	   parameter = properties["T2M"];
                   temperature = parameter["20160301"];
@@ -37,18 +38,14 @@
               }
         });
     };
-	 ext.temp = function(location, callback) {
-        // Make an AJAX call to the Open Weather Maps API
-        //request data
-	callback(5);
-    };
+	 
      // Block and block menu descriptions
     var descriptor = {
         blocks: [
             ['w', 'wait for random time', 'wait_random'],
 			['W', 'return temp value', 'get_temp_data'],
 			['R', 'current temperature in city %s', 'get_temp', 'Boston, MA'],
-		['R', 'current temperature %s', 'temp', 'Boston, MA'],
+		
         ]
     };
      // Register the extension
