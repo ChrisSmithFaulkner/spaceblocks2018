@@ -10,10 +10,10 @@
         return {status: 2, msg: 'Ready'};
     };
      
-	ext.get_temp = function(callback) {
+	ext.get_temp = function(lat, lon, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: 'https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=T2M&startDate=20160301&endDate=20160301&userCommunity=SSE&tempAverage=DAILY&outputList=JSON,ASCII&lat=36&lon=45&user=anonymous',
+              url: 'https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=T2M&startDate=20160301&endDate=20160301&userCommunity=SSE&tempAverage=DAILY&outputList=JSON,ASCII&lat='+lat+'&lon='+lon+'&user=anonymous',
               dataType: 'json',
               success: function( data ) {
                 // Got the data - parse it and return the temperature
@@ -32,7 +32,7 @@
      // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'current temperature', 'get_temp'],
+            ['R', 'current temperature lat: %f long: %f', 'get_temp', 36,45],
 		
         ]
     };
