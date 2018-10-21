@@ -23,7 +23,8 @@
             	properties = features[0].properties;
             	parameter = properties["parameter"];
 		temps = parameter["T2M"];
-                temperature = temps["20160301"];
+		
+                temperature = temps[date];
                 callback(temperature);
               }
         });
