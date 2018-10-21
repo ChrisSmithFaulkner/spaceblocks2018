@@ -30,9 +30,9 @@
               success: function( data ) {
                   // Got the data - parse it and return the temperature
 		   features = data["features"];
-            	   properties = features[0].properties;
-            	   parameter = properties.parameter;
-                  temperature = parameter[0];
+            	   properties = features["properties"];
+            	   parameter = properties["T2M"];
+                  temperature = parameter["20160301"];
                   callback(temperature);
               }
         });
