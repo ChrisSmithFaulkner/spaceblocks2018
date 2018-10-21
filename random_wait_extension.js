@@ -30,8 +30,9 @@
               success: function( data ) {
                   // Got the data - parse it and return the temperature
 		   features = data["features"];
-		      console.log(features);
-            	   properties = features[0].properties;;
+		      console.log(features[0]);
+		      console.log(features[0].properties);
+            	   properties = features[0].properties;
             	   parameter = properties["T2M"];
                   temperature = parameter["20160301"];
                   callback(5);
