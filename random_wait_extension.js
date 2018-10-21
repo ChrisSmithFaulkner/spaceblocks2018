@@ -22,7 +22,7 @@
 	ext.get_temp_data = function(callback) {
 		callback();
 	};
-	ext.get_temp = function(location, callback) {
+	ext.get_temp = function(callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
               url: 'https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=T2M&startDate=20160301&endDate=20160301&userCommunity=SSE&tempAverage=DAILY&outputList=JSON,ASCII&lat=36&lon=45&user=anonymous',
@@ -45,7 +45,7 @@
         blocks: [
             ['w', 'wait for random time', 'wait_random'],
 			['W', 'return temp value', 'get_temp_data'],
-			['R', 'current temperature in city %s', 'get_temp', 'Boston, MA'],
+			['R', 'current temperature', 'get_temp'],
 		
         ]
     };
