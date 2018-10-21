@@ -24,7 +24,7 @@ new (function() {
         }, wait*1000);
     };
 	
-	ext.power_temp_request = function(lat,lon,) {
+	ext.power_temp_request = function(lat,lon,callback) {
 		//create POWER url	
 		url = 'https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=T2M&startDate=20160301&endDate=20160331&userCommunity=SSE&tempAverage=DAILY&outputList=JSON,ASCII&lat='+lat+'&lon='+lon+'&user=anonymous'
 
