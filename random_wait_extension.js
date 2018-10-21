@@ -43,7 +43,7 @@ new (function() {
     var descriptor = {
         blocks: [
             ['w', 'wait for random time', 'wait_random'],
-			['R', 'execute POWER API call for temperature', 'power_temp_request',36,45]
+			['R', 'execute POWER API call for temperature', 'power_temp_request',36,45,'']
         ]
 
     };
