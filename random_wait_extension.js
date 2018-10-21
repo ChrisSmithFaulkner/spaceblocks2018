@@ -30,10 +30,31 @@
         });
     };
 	 
+	 ext.get_prec = function(lat, lon, date, callback) {
+        // Make an AJAX call to the Open Weather Maps API
+        $.ajax({
+              url: 'https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=PRECTOT&startDate='+date+'&endDate='+date+'&userCommunity=SSE&tempAverage=DAILY&outputList=JSON,ASCII&lat='+lat+'&lon='+lon+'&user=anonymous',
+              dataType: 'json',
+              success: function( data ) {
+                // Got the data - parse it and return the temperature
+		features = data["features"];
+		console.log(features[0]);
+		console.log(features[0].properties);
+            	properties = features[0].properties;
+            	parameter = properties["parameter"];
+		precs = parameter["PRECTOT"];
+		
+                temperature = precs[date];
+                callback(temperature);
+              }
+        });
+    };
+	 
      // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'current temperature lat: %d long: %d date (YYYYMMDD) : %s', 'get_temp', 36, 45, 20160301],
+ 		['R', 'temperature at lat: %d long: %d on date (YYYYMMDD) : %s', 'get_temp', 36, 45, 20160301],
+		['R', 'precipitation at lat: %d long: %d on date (YYYYMMDD) : %s', 'get_prec', 36, 45, 20160301],
 		
         ]
     };
