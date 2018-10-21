@@ -20,13 +20,13 @@
         }, wait*1000);
     };
 	ext.get_temp_data = function(callback) {
-		callback(5);
+		callback();
 	};
      // Block and block menu descriptions
     var descriptor = {
         blocks: [
             ['w', 'wait for random time', 'wait_random'],
-			['R', 'return temp value', 'get_temp_data'],
+			['W', 'return temp value', 'get_temp_data'],
         ]
     };
      // Register the extension
